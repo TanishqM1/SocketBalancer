@@ -358,12 +358,26 @@ private:
     }
 };
 
-int main()
+int main(int argc, char* argv[])
 {
     WSADATA wsa;
     WSAStartup(MAKEWORD(2, 2), &wsa);
 
-    IMServer server(1234, 1235, "data");
+    // Default values
+    int tcpPort = 5001;
+    int udpPort = 1235;
+    string dataDir = "data";
+
+    // Parse command line: im_server.exe <tcp_port> <udp_port> <data_dir>
+    if (argc >= 2) tcpPort = atoi(argv[1]);
+    if (argc >= 3) udpPort = atoi(argv[2]);
+    if (argc >= 4) dataDir = argv[3];
+
+    cout << "[Server] Starting with TCP=" << tcpPort 
+         << ", UDP=" << udpPort 
+         << ", DataDir=" << dataDir << "\n";
+
+    IMServer server(tcpPort, udpPort, dataDir);
     server.run();
 
     WSACleanup();
