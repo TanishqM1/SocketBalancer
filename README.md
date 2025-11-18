@@ -147,14 +147,23 @@ The load balancer distributes **TCP traffic** across multiple backend IM servers
 
 ### Running with Load Balancer
 
+**Compile:**
+```
+cd {YourPath}NetworksProject/rewrite/src
+g++ -std=gnu++17 -O2 im_server.cpp -lws2_32 -o im_server.exe
+g++ -std=gnu++17 -O2 im_client.cpp -lws2_32 -o im_client.exe
+g++ -std=gnu++17 -O2 load_balancer.cpp -lws2_32 -o load_balancer.exe
+```
+
+
 **Terminal 1 — Start Server 1:**
 ```bash
-./im_server.exe 5001 1235 data1
+./im_server.exe 5001 1235 ../data
 ```
 
 **Terminal 2 — Start Server 2 (optional):**
 ```bash
-./im_server.exe 5002 1236 data2
+./im_server.exe 5002 1236 ../data
 ```
 
 **Terminal 3 — Start Load Balancer:**
@@ -169,7 +178,7 @@ Output:
 [LB]   Backend 1: 127.0.0.1:5002
 ```
 
-**Terminal 4+ — Start Clients:**
+**Terminal 4+ — Start Client(s):**
 ```bash
 ./im_client.exe
 ```
