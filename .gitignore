@@ -1,0 +1,51 @@
+# --- Build Artifacts ---
+*.exe
+*.out
+*.obj
+*.o
+*.dll
+*.lib
+*.a
+*.so
+*.pdb
+*.ilk
+
+# --- CMake / Make ---
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# --- VSCode ---
+.vscode/
+*.code-workspace
+
+# --- Windows ---
+Thumbs.db
+desktop.ini
+
+# --- Logs / Temp ---
+*.log
+*.tmp
+
+# --- Project-specific data directory ---
+# IM Server creates "data/users/*.txt"
+data/
+!data/.gitkeep
+
+# --- Backup files ---
+*~
+*.bak
+*.old
+
+# --- Generated ports / runtime artifacts ---
+*.pid
+*.lock
+
+# --- Compiled Resources ---
+*.res
+*.rc
+
+# --- Ignore MinGW-specific build outputs ---
+*.d
+*.map
