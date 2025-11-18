@@ -358,21 +358,14 @@ private:
     }
 };
 
-int main(int argc, char* argv[]) {
-    int tcpPort = 1234;
-    int udpPort = 1235;
-    std::string dataDir = "data";
+int main()
+{
+    WSADATA wsa;
+    WSAStartup(MAKEWORD(2, 2), &wsa);
 
-    if (argc >= 2) tcpPort = std::stoi(argv[1]);
-    if (argc >= 3) udpPort = std::stoi(argv[2]);
-    if (argc >= 4) dataDir = argv[3];
-
-    std::cout << "Starting IMServer (C++)\n";
-    std::cout << "TCP port: " << tcpPort << ", UDP port: " << udpPort
-              << ", data dir: " << dataDir << "\n";
-
-    IMServer server(tcpPort, udpPort, dataDir);
+    IMServer server(1234, 1235, "data");
     server.run();
+
+    WSACleanup();
     return 0;
 }
-
