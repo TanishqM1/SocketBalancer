@@ -131,8 +131,8 @@ The load balancer distributes **TCP traffic** across multiple backend IM servers
 
 ```
 [Client 1] ──┐
-[Client 2] ──┼──> [Load Balancer :1234] ──┬──> [IM Server 1 :5001] ──> [Database 1]
-[Client 3] ──┘                             └──> [IM Server 2 :5002] ──> [Database 2]
+[Client 2] ──┼──> [Load Balancer :1234] ──┬──> [IM Server 1 :5001] ──> [Database]
+[Client 3] ──┘                             └──> [IM Server 2 :5002] ──────^
               
               UDP Presence Traffic (bypasses load balancer)
               └──────────────────────────────────> [IM Server :1235]
