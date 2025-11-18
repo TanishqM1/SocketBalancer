@@ -79,8 +79,8 @@ int main(){
     WSAStartup(MAKEWORD(2,2), &wsa);
 
     vector<Backend> backends = {
-        {"127.0.0.1", 5001},
-        {"127.0.0.1", 5002}
+        {"127.0.0.1", 5001},  // Server 1
+        {"127.0.0.1", 5002}   // Server 2
     };
 
     SOCKET listenSock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);

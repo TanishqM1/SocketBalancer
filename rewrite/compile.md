@@ -1,8 +1,8 @@
 - Run two seperate server(s):
 ```
 ./im_server.exe
-./im_server.exe 5001 6001 ../data
-./im_server.exe 5002 6002 ../data
+./im_server.exe 5001 1235 ../data
+./im_server.exe 5002 1236 ../data
 ```
 - Run Load Balancer
 ```
