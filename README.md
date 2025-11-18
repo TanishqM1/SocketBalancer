@@ -4,7 +4,7 @@ This project implements a simple instant-messaging system using both **TCP** and
 The server manages user registration, buddy lists, and online/offline presence.  
 Clients communicate with the server for account operations and communicate **directly with each other** for real-time chat.
 
-Originally designed as a networking assignment, this project demonstrates practical socket programming:
+this project demonstrates practical socket programming:
 - TCP request/response flow  
 - UDP presence updates  
 - Multi-threaded server + client  
@@ -241,24 +241,3 @@ Run the load balancer with 2+ backend servers and observe the console output:
 Each connection alternates between backends, demonstrating the round-robin algorithm in action.
 
 ---
-
-## Submission Notes (Original Context)
-
-For the original academic version of this project:
-- Submit your code and two walkthrough logs  
-- Name them `output1.txt` and `output2.txt`  
-- Due: March 2nd, 2025  
-
----
-
-## Future Enhancements
-
-- **Session Affinity** — Hash-based user-to-server mapping
-- **Health Checks** — Detect and remove failed backend servers
-- **Weighted Load Balancing** — Distribute based on server capacity
-- **Database Integration** — Shared PostgreSQL/MySQL backend
-- **Redis Caching** — Distributed presence/status management
-- **SSL/TLS** — Encrypted client-server communication
-- **Authentication** — Password-based login system
-- **Group Chat** — Multi-user chat rooms
-- **File Transfer** — Send files between buddies
