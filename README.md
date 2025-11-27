@@ -145,7 +145,40 @@ The load balancer distributes **TCP traffic** across multiple backend IM servers
 - **P2P Chat** happens directly between clients (no load balancer involved)
 - Round-robin distribution ensures even load across backend servers
 
-### Running with Load Balancer
+### Running with CMAKE
+
+1. Required: Windows + MSYS2 (ucrt64) + the following packages:
+```
+pacman -Syu
+pacman -S mingw-w64-ucrt-x86_64-gcc
+pacman -S mingw-w64-ucrt-x86_64-cmake
+pacman -S mingw-w64-ucrt-x86_64-ninja
+```
+2. From project root:
+```
+cd src
+mkdir build
+cd build
+cmake -G "Ninja" ..
+cmake --build .
+```
+
+3. Run system:
+
+IM Servers:
+`
+./im_server.exe 5001 1235 ../data
+`
+ and 
+`
+./im_server.exe 5002 1236 ../data
+`
+
+Load Balancer: `./load_balancer.exe`
+
+Launch Client(s): `./im_client.exe`
+
+### Running with Raw Compile
 
 **Compile:**
 ```
